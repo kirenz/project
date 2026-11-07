@@ -1,19 +1,7 @@
-# Create Conda environment
+# Python-Umgebung
 
-Insert the following code in your terminal to create the project-environment (the environment will be called `project`):
+Für den aktuellen Kurs wird uv verwendet. Die Einrichtung steht in der [Kursanleitung](https://github.com/data-analytics-ws2627/website/blob/main/programming-requirements.qmd).
 
-```bash
-conda env create -f environment.yml
-```
+Die für das eigene Projekt benötigten Pakete werden in pyproject.toml im Projektstamm festgehalten. uv.lock fixiert deren Versionen. Beide Dateien werden zusammen mit dem Code versioniert. Die virtuelle Umgebung .venv wird nicht eingecheckt.
 
----
-
-YAML is a data serialization language that is often used for writing configuration files. The files contain text data arranged in a hierarchical structure.
-
-To learn more about `.yml` files, visit the following resources:
-
-- [Creating an environment from an environment.yml file](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
-
-- [Creating an environment file manually](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually)
-
-
+Die Abhängigkeiten richten sich nach der gewählten Analyse. Das Statistik-Labor bietet die Umgebung für die Kursbeispiele; zusätzliche Projektpakete müssen ausdrücklich dokumentiert werden.

@@ -1,11 +1,11 @@
-## My Project Title
+## Analyseprojekt · Data Analytics WS 2026/27
 
 
 ---
 
 ### Project description
 
-*Your description here*
+Fragestellung, Datenquelle und verantwortliche Teammitglieder hier beschreiben.
 
 
 ---
@@ -33,6 +33,6 @@
 ├── reports            <- Generated analysis as HTML, PDF, etc.
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
-├── requirements       <- The requirements file for reproducing the analysis environment, e.g. a `environment.yml` file
+├── requirements       <- The requirements file for reproducing the analysis environment, e.g. `pyproject.toml` and `uv.lock` in the project root
 
 ```    
