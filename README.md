@@ -11,9 +11,9 @@ Diese Vorlage verbindet Fragestellung, Daten und reproduzierbare Analyse. Die fa
 3. Das eigene Repository mit GitHub Desktop oder dem vorhandenen Git-Werkzeug klonen.
 4. Ein Terminal im geklonten Projektordner öffnen.
 
-Bei einer Zuweisung über GitHub Classroom stattdessen die dort erzeugte Arbeitskopie verwenden.
-
 ## Python-Umgebung
+
+Die Vorlage verwendet Python 3.14 und einen projektlokalen Notebook-Kernel.
 
 Voraussetzung: [uv ist installiert](https://github.com/kirenz/uv-setup#installing-uv). Das Terminal befindet sich im Projektordner.
 
@@ -26,7 +26,7 @@ uv sync --locked
 2. Den Kernel in dieser lokalen Umgebung einrichten:
 
 ```bash
-uv run --locked python -m ipykernel install --sys-prefix --name data-analytics --display-name "Python (Data Analytics)"
+uv run --locked python -m ipykernel install --sys-prefix --name data-analytics --display-name "Python 3.14 (Data Analytics)"
 ```
 
 3. Jupyter Lab starten:
@@ -35,7 +35,9 @@ uv run --locked python -m ipykernel install --sys-prefix --name data-analytics -
 uv run --locked jupyter lab
 ```
 
-4. Im Notebook den Kernel „Python (Data Analytics)“ auswählen.
+4. Im Notebook den Kernel „Python 3.14 (Data Analytics)“ auswählen.
+
+Prüfkriterium: `uv run --locked python --version` zeigt Python 3.14.
 
 Die lokale Umgebung wird in `.venv` angelegt. `pyproject.toml` und `uv.lock` gehören zum Repository; `.venv` bleibt lokal.
 
