@@ -1,0 +1,17 @@
+[project]
+name = "data-analytics-project"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "pandas>=2.2,<3",
+  "numpy>=2,<3",
+  "matplotlib>=3.9,<4",
+  "scikit-learn>=1.6,<2",
+  "altair>=5.5,<6",
+  "openpyxl>=3.1,<4",
+  "jupyterlab>=4.3,<5",
+  "ipykernel>=6.29,<8",
+]
+
+[dependency-groups]
+dev = ["nbformat>=5.10,<6", "nbclient>=0.10,<1"]
