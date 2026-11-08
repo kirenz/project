@@ -73,4 +73,4 @@ Die vorhandene Umgebung deckt die Kursbeispiele ab. Die Eignung zusätzlicher Pa
 
 ## Einsatz von Coding-Agenten
 
-Bei zulässigem KI-Einsatz im Projekt dokumentieren, welche Schritte übernommen wurden und wie sie geprüft wurden. Ergebnisse anhand der Daten unabhängig nachrechnen. Das BPMN-Prozessmodell kann Zuständigkeiten, Übergaben und Prüfschritte erklären.
+Bei zulässigem KI-Einsatz im Projekt dokumentieren, welche Schritte übernommen wurden und wie sie geprüft wurden. Ergebnisse anhand der Daten unabhängig nachrechnen. Die Regeln für den Agenten stehen in `AGENTS.md`. Das BPMN-Prozessmodell kann Zuständigkeiten, Übergaben und Prüfschritte erklären.
