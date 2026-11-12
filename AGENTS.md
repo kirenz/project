@@ -9,5 +9,7 @@ Im Projekt übernimmt der Agent Analyseschritte. Das Team prüft jedes Ergebnis 
 - Pfade relativ zum Notebook angeben, etwa `../data/raw/`.
 - Berechnete Ergebnisse von Annahmen trennen. Fehlende Werte als fehlend erhalten.
 - Korrelation und Kausalität sowie Modellanpassung und Vorhersagequalität getrennt darstellen.
+- Regression ist der Modellierungskern. Baseline und Modell auf denselben Testdaten vergleichen. Testdaten weder für Modellwahl noch für die Anpassung der Datenaufbereitung verwenden.
+- Nach Änderungen an `src/` oder `app.py` die Tests mit `uv run --locked pytest` ausführen.
 - Geänderte Dateien und Prüfergebnisse am Ende berichten, damit das Team sie gegenrechnen kann.
 - Zugangsdaten und vertrauliche Daten bleiben außerhalb des Repositorys. Daten nur auf ausdrücklichen Auftrag hochladen oder veröffentlichen.

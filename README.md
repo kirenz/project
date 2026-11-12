@@ -41,6 +41,42 @@ Prüfkriterium: `uv run --locked python --version` zeigt Python 3.14.
 
 Die lokale Umgebung wird in `.venv` angelegt. `pyproject.toml` und `uv.lock` gehören zum Repository; `.venv` bleibt lokal.
 
+## Regressionsbeispiel und Streamlit-Oberfläche
+
+Die Vorlage enthält einen kleinen lauffähigen Regressionsablauf. Er sagt die Bearbeitungsdauer einer Serviceanfrage in Stunden vorher, vergleicht eine Mittelwert-Baseline mit einer Ridge-Regression und bewertet beide auf zurückgehaltenen Testdaten. Die Beispieldaten unter `data/beispiel/` sind synthetisch, also erfunden. Variablen und Erzeugung stehen in `data/beispiel/QUELLEN.md`. Als Kursbeispiel sind sie kein Projektdatensatz.
+
+Voraussetzung: Die Python-Umgebung ist eingerichtet. Das Terminal befindet sich im Projektordner.
+
+1. Den Analyseablauf im Terminal starten:
+
+```bash
+uv run --locked python -m analytics_project.run
+```
+
+2. Die Kennzahlen im Terminal mit `outputs/metrics.csv` vergleichen.
+3. Die Oberfläche starten:
+
+```bash
+uv run --locked streamlit run app.py
+```
+
+4. Die angezeigte lokale Adresse im Browser öffnen und „Analyse starten“ wählen.
+5. Die automatischen Prüfungen ausführen:
+
+```bash
+uv run --locked pytest
+```
+
+Prüfkriterium: Terminal und Oberfläche zeigen dieselben Kennzahlen für Baseline und Ridge. Alle Tests bestehen.
+
+Für eine eigene CSV-Datei die Zielspalte und die Kennungsspalten angeben:
+
+```bash
+uv run --locked python -m analytics_project.run --csv data/raw/meine-daten.csv --target zielspalte --id-columns kennung
+```
+
+Der Ablauf verwendet einen zufälligen Split für unabhängige Beobachtungen ohne Zeitbezug. Numerische Merkmale werden mit dem Median ergänzt und skaliert. Kategoriale Merkmale werden mit dem häufigsten Wert ergänzt und in 0/1-Spalten umgewandelt (One-Hot-Kodierung). Diese Schritte und die Wahl des Parameters Alpha lernen nur aus den Trainingsdaten. Eine Textspalte mit mehr als 20 Ausprägungen führt zu einer Fehlermeldung: Kennungen gehören zu `--id-columns`, feine Kategorien werden fachlich zusammengefasst. Das Beispiel ist ein Ausgangspunkt und ersetzt keine eigene Analyse.
+
 ## Projekt beginnen
 
 1. In dieser README den Projekttitel, die Fragestellung und die Teammitglieder ergänzen.
@@ -48,8 +84,10 @@ Die lokale Umgebung wird in `.venv` angelegt. `pyproject.toml` und `uv.lock` geh
 3. In `references/project-proposal.ipynb` die ausgewählte Frage und den Analyseplan beschreiben.
 4. Freigegebene Originaldaten in `data/raw/` ablegen und ihre Herkunft dokumentieren.
 5. In `notebooks/draft-analysis.ipynb` Datenprüfung, Exploration und Modellierung entwickeln.
-6. In `reports/report.ipynb` Ergebnisse, Prüfung und Grenzen zusammenführen.
-7. Den Kernel neu starten und den Bericht vollständig ausführen.
+6. In `docs/prozessmodell.md` den Geschäftsprozess beschreiben und die BPMN-Skizze ablegen.
+7. `src/analytics_project/` und `app.py` an die eigene Analyse anpassen.
+8. In `reports/report.ipynb` Ergebnisse, Prüfung und Grenzen zusammenführen.
+9. Den Kernel neu starten und den Bericht vollständig ausführen.
 
 Prüfkriterium: Der Bericht läuft mit der dokumentierten Umgebung vollständig durch. Jede Schlussfolgerung lässt sich auf Daten und Berechnungen zurückführen.
 
@@ -63,6 +101,13 @@ Prüfkriterium: Der Bericht läuft mit der dokumentierten Umgebung vollständig 
 | `data/processed/` | Aufbereitete Analysedaten |
 | `notebooks/` | Entwicklung und Prüfung der Analyse |
 | `references/` | Fragestellung, Datenbeschreibung und Quellen |
+| `src/analytics_project/` | Analyseablauf: Datenprüfung, Split, Baseline, Regression, Bewertung |
+| `app.py` | Streamlit-Oberfläche für den Analyseablauf |
+| `tests/` | Automatische Prüfungen für Analyse und Oberfläche |
+| `data/beispiel/` | Synthetische Beispieldaten mit Variablenverzeichnis |
+| `scripts/` | Erzeugung der Beispieldaten mit festem Seed |
+| `docs/prozessmodell.md` | Geschäftsprozess, BPMN-Skizze und Abwägung zum KI-Einsatz |
+| `docs/optional-adk.md` | Hinweise zu einer freiwilligen Agenten-Erweiterung |
 | `models/` | Gespeicherte Modelle |
 | `reports/` | Ergebnisbericht und Präsentation |
 | `pyproject.toml`, `uv.lock` | Pakete und festgelegte Versionen |
@@ -73,4 +118,4 @@ Die vorhandene Umgebung deckt die Kursbeispiele ab. Die Eignung zusätzlicher Pa
 
 ## Einsatz von Coding-Agenten
 
-Bei zulässigem KI-Einsatz im Projekt dokumentieren, welche Schritte übernommen wurden und wie sie geprüft wurden. Ergebnisse anhand der Daten unabhängig nachrechnen. Die Regeln für den Agenten stehen in `AGENTS.md`. Das BPMN-Prozessmodell kann Zuständigkeiten, Übergaben und Prüfschritte erklären.
+Bei zulässigem KI-Einsatz im Projekt dokumentieren, welche Schritte übernommen wurden und wie sie geprüft wurden. Ergebnisse anhand der Daten unabhängig nachrechnen. Die Regeln für den Agenten stehen in `AGENTS.md`. Das BPMN-Prozessmodell zeigt Zuständigkeiten, Übergaben und den Schritt, an dem eine Person das Ergebnis prüft.
