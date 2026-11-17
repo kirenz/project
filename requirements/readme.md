@@ -1,6 +1,6 @@
 # Python-Umgebung
 
-Für den aktuellen Kurs wird uv verwendet. Die Einrichtung steht in der [Kursanleitung](https://github.com/data-analytics-ws2627/website/blob/main/programming-requirements.qmd).
+Für den aktuellen Kurs wird uv verwendet. Die Einrichtung steht in der [Kursanleitung](https://kirenz.github.io/data-analytics-ws2627/programming-requirements.html).
 
 Die für das eigene Projekt benötigten Pakete werden in pyproject.toml im Projektstamm festgehalten. uv.lock fixiert deren Versionen. Beide Dateien werden zusammen mit dem Code versioniert. Die virtuelle Umgebung .venv wird nicht eingecheckt.
 

@@ -2,7 +2,7 @@
 
 Data Analytics · WS 2026/27
 
-Diese Vorlage verbindet Fragestellung, Daten und reproduzierbare Analyse. Die fachlichen Anforderungen stehen in der [Projektbeschreibung des Kurses](https://github.com/data-analytics-ws2627/website/blob/main/project-description.qmd). Termine und Prüfungsmodalitäten stehen im aktuellen Moodle-Kurs.
+Diese Vorlage verbindet Fragestellung, Daten und reproduzierbare Analyse. Die fachlichen Anforderungen stehen in der [Projektbeschreibung des Kurses](https://kirenz.github.io/data-analytics-ws2627/project-description.html). Termine und Prüfungsmodalitäten stehen im aktuellen Moodle-Kurs.
 
 ## Eigene Arbeitskopie
 

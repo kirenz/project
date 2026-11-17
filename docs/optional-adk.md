@@ -11,4 +11,4 @@ Vor einer Umsetzung festlegen:
 3. Die Abbruchbedingungen und die menschliche Freigabe.
 4. Einen Prüffall für den Normalfall und einen für fehlende Daten.
 
-API-Schlüssel nur lokal als Umgebungsvariable speichern, nie im Repository. Nur freigegebene, nicht vertrauliche Daten an einen Modellanbieter senden. Die Einrichtung beschreibt das Kursmaterial [Agents mit Google ADK](https://data-analytics-ws2627.github.io/website/agents.html).
+API-Schlüssel nur lokal als Umgebungsvariable speichern, nie im Repository. Nur freigegebene, nicht vertrauliche Daten an einen Modellanbieter senden. Die Einrichtung beschreibt das Kursmaterial [Agents mit Google ADK](https://kirenz.github.io/data-analytics-ws2627/agents.html).
